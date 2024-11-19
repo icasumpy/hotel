@@ -30,9 +30,6 @@
       <!-- gallery -->
       @include('home.galary')
       <!-- end gallery -->
-      <!-- blog -->
-      
-      <!-- end blog -->
       <!--  contact -->
       @include('home.contact')
       <!-- end contact -->

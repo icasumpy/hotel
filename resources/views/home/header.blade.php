@@ -36,12 +36,50 @@
                       <li class="nav-item">
                          <a class="nav-link" href="contact.html">Contact Us</a>
                       </li>
-                      <li class="nav-item" style="padding-right: 10px">
-                        <a class="btn btn-success" href="{{url('login')}}">Login</a>
-                      </li>
-                      <li class="nav-item">
-                        <a class="btn btn-primary" href="{{ url('register') }}">Register</a>
-                      </li>
+
+
+                      
+
+                      
+
+                      @if (Route::has('login'))
+                            
+                                @auth
+                                    {{-- <a
+                                        href="{{ url('/home') }}"
+                                        class="rounded-md px-3 py-2 text-black ring-1 ring-transparent transition hover:text-black/70 focus:outline-none focus-visible:ring-[#FF2D20]"
+                                    >
+                                        Dashboard
+                                    </a> --}}
+
+                                    <x-app-layout>
+
+                                    </x-app-layout>
+                                @else
+                                    {{-- <a
+                                        href="{{ route('login') }}"
+                                        class="font-semibold text-gray-600 hover:text-gray-600 hover:text-gray-900 focus:rounded-sm focus:outline-red-500">
+                                        Log in
+                                    </a> --}}
+                                    <li class="nav-item" style="padding-right: 10px">
+                                       <a class="btn btn-success" href="{{url('login')}}">Login</a>
+                                     </li>
+
+                                    @if (Route::has('register'))
+                                        {{-- <a
+                                            href="{{ route('register') }}"
+                                            class="rounded-md px-3 py-2 text-black ring-1 ring-transparent transition hover:text-black/70 focus:outline-none focus-visible:ring-[#FF2D20]"
+                                        >
+                                            Register
+                                        </a> --}}
+                                        <li class="nav-item">
+                                          <a class="btn btn-primary" href="{{ url('register') }}">Register</a>
+                                        </li>
+                                    @endif
+                                @endauth
+                            
+                        @endif
+
                    </ul>
                 </div>
              </nav>
