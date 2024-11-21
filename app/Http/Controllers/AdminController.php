@@ -90,4 +90,8 @@ class AdminController extends Controller
         $data->delete();
         return redirect()->back();
     }
+    public function room_update($id)
+    {
+        return view('admin.update_room');
+    }
 }
