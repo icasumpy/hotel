@@ -36,7 +36,7 @@
 
       <div class="page-content">
     <div class="page-header">
-      <div class="container-fluid">
+    <div class="container-fluid">
     <table class="table_deg">
 <tr>
     <th class="th_deg">Room Title</th>
@@ -70,8 +70,8 @@
       href="{{url('room_update',$data->id)}}">Update</a>
     </td>
 </tr>
-
-    </table>a
+@endforeach
+    </table>
 </div>
 </div>
 </div>

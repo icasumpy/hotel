@@ -18,7 +18,9 @@ class AdminController extends Controller
 
             if($usertype =='user')
             {
-                return view('home.index');
+                $room =Room::all();
+
+                return view('home.index', compact('room'));
             }
 
             else if($usertype =='admin')
@@ -38,7 +40,9 @@ class AdminController extends Controller
     public function home()
     {
 
-        return view('home.index');
+        $room = Room::all();
+
+        return view('home.index', compact('room'));
 
     }
 
@@ -92,6 +96,39 @@ class AdminController extends Controller
     }
     public function room_update($id)
     {
-        return view('admin.update_room');
+        $data = Room::find($id);
+        
+
+        return view('admin.update_room', compact('data'));
+    }
+
+    public function edit_room(Request $request, $id)
+    {
+        $data = Room::find($id);
+
+        $data->room_title = $request->title;
+
+        $data->description = $request->description;
+
+        $data->price = $request->price;
+
+        $data->wifi = $request->wifi;
+
+        $data->room_type = $request->type;
+
+        $image=$request->image;
+
+        if($image)
+        {
+            $imagename=time().'.'.$image->getClientOriginalExtension();
+
+            $request->image->move('room',$imagename);
+
+            $data->image=$imagename;
+        }
+
+        $data->save();
+
+        return redirect()->back();
     }
 }
