@@ -5,7 +5,7 @@
       <div class="sidebar-header d-flex align-items-center">
         <div class="avatar"><img src="admin/img/avatar-6.jpg" alt="..." class="img-fluid rounded-circle"></div>
         <div class="title">
-          <h1 class="h5">Khanh Ly</h1>
+          <h1 class="h5">admin</h1>
           <p>23JIT</p>
         </div>
       </div>
@@ -23,8 +23,20 @@
 
               <li>
                 
-              <a href="{{url('bookings')}}"> <i class="icon-home"></i>Bookings </a>
+              <a href="{{url('bookings')}}"> <i class="icon-home"></i>Bookings</a>
             
+              </li>
+
+              <li>
+                
+                <a href="{{url('view_gallary')}}"> <i class="icon-home"></i>Gallary</a>
+              
+              </li>
+
+              <li>
+                
+                <a href="{{url('all_messages')}}"> <i class="icon-home"></i>Message</a>
+              
               </li>
 
               
