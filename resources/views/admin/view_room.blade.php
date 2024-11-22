@@ -34,10 +34,12 @@
 
       <!-- Sidebar Navigation end-->
 
-      <div class="page-content">
-    <div class="page-header">
-    <div class="container-fluid">
-    <table class="table_deg">
+    <div class="page-content">
+      <div class="page-header">
+        <div class="container-fluid">
+    
+        <table class="table_deg">
+          
 <tr>
     <th class="th_deg">Room Title</th>
     <th class="th_deg">Description</th>
@@ -72,8 +74,9 @@
 </tr>
 @endforeach
     </table>
-</div>
-</div>
+      
+        </div>
+    </div>
 </div>
 
 
