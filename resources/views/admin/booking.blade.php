@@ -49,12 +49,12 @@
                     <th class="th_deg">Phone</th>
                     <th class="th_deg">Arrival Date</th>
                     <th class="th_deg">Leaving Date</th>
-                    <th class="th_deg"> Status</th>
-                    <th class="th_deg"> Room Title</th>
-                    <th class="th_deg"> Price</th>
-                    <th class="th_deg"> Image</th>
-
-
+                    <th class="th_deg">Status</th>
+                    <th class="th_deg">Room Title</th>
+                    <th class="th_deg">Price</th>
+                    <th class="th_deg">Image</th>
+                    <th class="th_deg">Delete</th>
+                    <th class="th_deg">Status Update</th>
                     
                 </tr>
                
@@ -72,7 +72,13 @@
                     <td>
                         <img style="width: 200!important" src="/room/{{$data->room->image}}" alt="">
                     </td>
-                    
+                    <td>
+                        <a onclick="return confirm('Are you sure to delete this?')" class="btn btn-danger" href="{{ url('delete_booking', $data->id) }}">Delete</a>
+                    </td>
+                    <td>
+                        <a class="btn btn-secendary" href="">Approve</a>
+                        <a class="btn btn-warning" href="">Rejected</a>
+                    </td>
                 </tr>
                 @endforeach
            
