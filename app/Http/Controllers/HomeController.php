@@ -48,6 +48,7 @@ class HomeController extends Controller
 
         if($isBooked)
         {
+            // sửa lại mess, thêm thông báo người dùng trước sd ngày nào.
             return redirect()->back()->with('message','Room is already booked please try different date');
         }
         else
