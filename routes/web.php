@@ -29,3 +29,26 @@ Route::get('/room_details/{id}', [HomeController::class,'room_details']);
 Route::post('/add_booking/{id}', [HomeController::class,'add_booking']);
 
 Route::get('/bookings', [AdminController::class,'bookings']);
+
+
+Route::get('/delete_booking/{id}', [AdminController::class,'delete_bookings']);
+
+
+Route::get('/approve_book/{id}', [AdminController::class,'approve_book']);
+
+Route::get('/reject_book/{id}', [AdminController::class,'reject_book']);
+
+
+Route::get('/view_gallary', [AdminController::class,'view_gallary']);
+
+
+Route::post('/upload_gallary', [AdminController::class,'upload_gallary']);
+
+
+Route::get('/delete_gallary/{id}', [AdminController::class,'delete_gallary']);
+
+
+Route::post('/contact', [HomeController::class,'contact']);
+
+
+Route::get('/all_messages', [AdminController::class,'all_messages']);

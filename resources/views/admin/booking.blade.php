@@ -16,7 +16,7 @@
             .th_deg
             {
                 background-color: skyblue;
-                padding: 15px;
+                padding: 8px;
 
             }
             tr
@@ -49,12 +49,12 @@
                     <th class="th_deg">Phone</th>
                     <th class="th_deg">Arrival Date</th>
                     <th class="th_deg">Leaving Date</th>
-                    <th class="th_deg"> Status</th>
-                    <th class="th_deg"> Room Title</th>
-                    <th class="th_deg"> Price</th>
-                    <th class="th_deg"> Image</th>
-
-
+                    <th class="th_deg">Status</th>
+                    <th class="th_deg">Room Title</th>
+                    <th class="th_deg">Price</th>
+                    <th class="th_deg">Image</th>
+                    <th class="th_deg">Delete</th>
+                    <th class="th_deg">Status Update</th>
                     
                 </tr>
                
@@ -66,13 +66,41 @@
                     <td>{{$data->phone}}</td>
                     <td>{{$data->start_date}}</td>   
                     <td>{{$data->end_date}}</td>
-                    <td>{{$data->status}}</td>
+                    <td>
+                        
+                        @if ($data->status == 'approve')
+
+                        <span style="color: skyblue">Approved</span>
+                            
+                        @endif
+
+                        @if ($data->status == 'rejected')
+
+                        <span style="color: red">Rejected</span>
+                            
+                        @endif
+
+                        @if ($data->status == 'waitting')
+
+                        <span style="color: yellow">Waitting</span>
+                            
+                        @endif
+
+                    </td>
                     <td>{{$data->room->room_title}}</td>
                     <td>{{$data->room->price}}</td>
                     <td>
                         <img style="width: 200!important" src="/room/{{$data->room->image}}" alt="">
                     </td>
-                    
+                    <td>
+                        <a onclick="return confirm('Are you sure to delete this?')" class="btn btn-danger" href="{{ url('delete_booking', $data->id) }}">Delete</a>
+                    </td>
+                    <td>
+                        <span style="padding-bottom: 10px">
+                            <a class="btn btn-success" href="{{ url('approve_book', $data->id) }}">Approve</a>
+                        </span>
+                            <a class="btn btn-warning" href="{{ url('reject_book', $data->id) }}">Rejected</a>
+                    </td>
                 </tr>
                 @endforeach
            
