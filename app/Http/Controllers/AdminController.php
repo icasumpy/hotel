@@ -237,11 +237,17 @@ class AdminController extends Controller
         return view('admin.all_message', compact('data'));
 
     }
+
+
+
     public function send_email($id)
     {
         $data = Contact::find($id);
-        return view('admin.send_mail');
+
+        return view('admin.send_mail', compact('data'));
     }
+
+
     public function mail(Request $request,$id)
     {
         $data = Contact::find($id);

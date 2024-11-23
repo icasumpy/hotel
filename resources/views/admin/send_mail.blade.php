@@ -3,27 +3,27 @@
   <head> 
     <base href="/public">
     @include('admin.css')
-
     <style type="text/css">
 
-label
-{
-   display: inline-block;
-   width: 200px; 
-}
+        label
+        {
+           display: inline-block;
+           width: 200px; 
+        }
 
-.div_deg
-{
-    padding-top: 30px;
-}
+        .div_deg
+        {
+            padding-top: 30px;
+        }
 
-.div_center
-{
-    text-align: center;
-    padding-top: 40px;
-}
+        .div_center
+        {
+            text-align: center;
+            padding-top: 40px;
+        }
+    
+    </style>
 
-</style>
   </head>
   <body>
     @include('admin.header')
@@ -40,16 +40,16 @@ label
 
                 <h1 style="font-size: 30px; font-weight: bold">Mail send to {{$data->name}}</h1>
 
-                <form action="{{url('mail',$data->id)}}" method="Post">
+                <form action="" method="Post">
                     @csrf
 
                     <div class="div_deg">
-                        <label>Greeting</label>
-                        <input type="text" name="greeting">
+                        <label>Greating</label>
+                        <input type="text" name="greating">
                     </div>
 
                     <div class="div_deg">
-                        <label>mail Body</label>
+                        <label>Mail Body</label>
                         <textarea name="body"></textarea>
                     </div>
 
@@ -64,11 +64,10 @@ label
                     </div>
 
                     <div class="div_deg">
-                        <label>End line</label>
+                        <label>End Line</label>
                         <input type="text" name="endline">
                     </div>
-
-                   
+                    
 
                     <div class="div_deg">
                         <input class="btn btn-primary" type="submit" value="Send Mail">

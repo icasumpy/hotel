@@ -23,7 +23,7 @@
                       </li>
                       
                       <li class="nav-item">
-                         <a class="nav-link" href="{{url(our_room)}}">Our room</a>
+                         <a class="nav-link" href="{{url('our_room')}}">Our room</a>
                       </li>
                       <li class="nav-item">
                          <a class="nav-link" href="{{url('hotel_gallary')}}">Gallery</a>

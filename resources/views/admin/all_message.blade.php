@@ -58,7 +58,7 @@
                     <td>{{ $data->phone }}</td>
                     <td>{{ $data->message }}</td>
                     <td>
-                      <a class="btn btn-success" href="{{url('send_mail',$data->id}}">send email</a>
+                      <a class="btn btn-success" href="{{ url('send_mail', $data->id) }}">send email</a>
                     </td>
                     
                 </tr>
