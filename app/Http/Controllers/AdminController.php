@@ -9,8 +9,9 @@ use App\Models\Room;
 use App\Models\Booking;
 use App\Models\Gallary;
 use App\Models\Contact;
-use Notification;
 use App\Notifications\SendEmailNotification;
+use Illuminate\Support\Facades\Notification;
+
 
 class AdminController extends Controller
 {
@@ -237,17 +238,11 @@ class AdminController extends Controller
         return view('admin.all_message', compact('data'));
 
     }
-
-
-
     public function send_email($id)
     {
         $data = Contact::find($id);
-
-        return view('admin.send_mail', compact('data'));
+        return view('admin.send_mail');
     }
-
-
     public function mail(Request $request,$id)
     {
         $data = Contact::find($id);

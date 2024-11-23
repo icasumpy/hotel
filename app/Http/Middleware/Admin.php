@@ -22,7 +22,7 @@ class Admin
             return $next($request);
         }
 
-        abrot('401');
+        abort('401');
 
         return $next($request);
     }
