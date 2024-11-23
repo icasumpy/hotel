@@ -16,7 +16,7 @@ class SendEmailNotification extends Notification
     /**
      * Create a new notification instance.
      */
-    public function __construct()
+    public function __construct($details)
     {
         $this->details=$details;
     }
