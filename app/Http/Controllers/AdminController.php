@@ -9,6 +9,8 @@ use App\Models\Room;
 use App\Models\Booking;
 use App\Models\Gallary;
 use App\Models\Contact;
+use Notification;
+use App\Notifications\SendEmailNotification;
 
 class AdminController extends Controller
 {
@@ -234,5 +236,30 @@ class AdminController extends Controller
 
         return view('admin.all_message', compact('data'));
 
+    }
+    public function send_email($id)
+    {
+        $data = Contact::find($id);
+        return view('admin.send_mail');
+    }
+    public function mail(Request $request,$id)
+    {
+        $data = Contact::find($id);
+
+        $details = [
+
+            'greeting' => $request->greeting ,
+
+            'body' => $request->body ,
+
+            'action_text' => $request->action_text ,
+
+            'action_url' => $request->action_url ,
+
+            'endline' => $request->endline ,
+
+        ];
+        Notification::send($data,new SendEmailNotification($details));
+        return redirect()->back();
     }
 }
