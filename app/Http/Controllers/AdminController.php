@@ -241,7 +241,7 @@ class AdminController extends Controller
     public function send_email($id)
     {
         $data = Contact::find($id);
-        return view('admin.send_mail');
+        return view('admin.send_mail', compact('data'));
     }
     public function mail(Request $request,$id)
     {
